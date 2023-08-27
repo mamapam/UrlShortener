@@ -1,1 +1,1 @@
-web: cd src/UrlShortener.WebApi/ClientApp && npm start
+web: cd src/UrlShortener.WebApi/ClientApp
