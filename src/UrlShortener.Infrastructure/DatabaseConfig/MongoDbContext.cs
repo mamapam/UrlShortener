@@ -11,7 +11,16 @@ public class MongoDbContext
     public MongoDbContext(IOptions<MongoDbConfig> options)
     {
         var config = options.Value;
-        var connectionString = $"mongodb://{config.Username}:{config.Password}@{config.Server}:{config.Port}";
+        string connectionString;
+
+        if (config.UseSrv)
+        {
+            connectionString = $"mongodb+srv://{config.Username}:{config.Password}@{config.Server}/?retryWrites=true&w=majority";
+        }
+        else
+        {
+            connectionString = $"mongodb://{config.Username}:{config.Password}@{config.Server}:{config.Port}";
+        }
 
         Client = new MongoClient(connectionString);
         Database = Client.GetDatabase(config.Database);

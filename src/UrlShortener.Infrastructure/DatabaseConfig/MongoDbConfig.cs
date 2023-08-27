@@ -7,4 +7,5 @@ public class MongoDbConfig
     public string Server { get; set; } = String.Empty;
     public string Port { get; set; } = String.Empty;
     public string Database { get; set; } = String.Empty;
+    public bool UseSrv { get; set; } = true;
 }
