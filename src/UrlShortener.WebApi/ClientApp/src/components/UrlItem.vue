@@ -12,7 +12,7 @@ const props = defineProps({
     required: true,
   },
 });
-const baseApiUrl = location.origin;
+const baseApiUrl = window.location.host;
 
 const fullShortUrl = computed(() => `${baseApiUrl}/${props.shortenedUrl}`);
 
