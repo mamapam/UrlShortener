@@ -1,1 +1,1 @@
-web: cd src/UrlShortener.WebApi/ClientApp
+web: dotnet src/UrlShortener.WebApi/bin/Release/net6.0/publish/UrlShortener.WebApi.dll
